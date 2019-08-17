@@ -3,3 +3,6 @@ run:
 
 test:
 	@mvn test
+
+build:
+	@mvn install
