@@ -11,9 +11,22 @@ class Node {
             // Contact, each containing ID, IP and PORT of a node
 
     // FileHashTable, mapping file ids to file locations
+        // Files are stored on nodes with ids "close" to their keys via XOR
+
+    private final FileHashTable fileHashTable;
 
     Node() {
-        this.uuid = UUID.randomUUID();
+        this.uuid = Node.generateId();
+        this.fileHashTable = new FileHashTable(this.uuid);
+    }
+
+    Node(UUID uuid, FileHashTable fileHashTable) {
+        this.uuid = uuid;
+        this.fileHashTable = fileHashTable;
+    }
+
+    static UUID generateId() {
+        return UUID.randomUUID();
     }
 
     UUID getUuid() {

@@ -2,20 +2,23 @@ package javap2p;
 
 import java.util.Hashtable;
 import java.util.Optional;
+import java.util.UUID;
 
-public class FileHashTable {
+class FileHashTable {
 
+    private final UUID nodeId;
     private final Hashtable<String, String> hashTable;
 
-    FileHashTable() {
-        this.hashTable = new Hashtable<String, String>();
+    FileHashTable(UUID nodeId) {
+        this.nodeId = nodeId;
+        this.hashTable = new Hashtable<>();
     }
 
-    public void set(String fileId, String fileUrl) {
+    void set(String fileId, String fileUrl) {
        this.hashTable.put(fileId, fileUrl);
     }
 
-    public Optional<String> get(String fileId) {
+    Optional<String> get(String fileId) {
         Optional<String> maybeFileUrl = Optional.ofNullable(this.hashTable.get(fileId));
         return maybeFileUrl;
     }
