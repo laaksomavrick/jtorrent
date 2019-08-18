@@ -29,7 +29,7 @@ class Contact {
         this.port = Optional.empty();
     }
 
-    public String getId() {
+    String getId() {
         return id;
     }
 
@@ -41,11 +41,11 @@ class Contact {
         return port;
     }
 
-    public Date getLastSeen() {
+    Date getLastSeen() {
         return lastSeen;
     }
 
-    public void setLastSeen(Date lastSeen) {
+    void setLastSeen(Date lastSeen) {
         this.lastSeen = lastSeen;
     }
 }

@@ -1,29 +1,31 @@
 package javap2p;
 
+/**
+ * For the moment, this is the primary object of this package.
+ */
 class Node {
-
-    private static final String GENERATE_ID_ALGORITHM = "SHA-256";
-    private static final String STRING_ENCODING = "UTF-8";
 
     private final String id;
 
-    // RoutingTable
-        // "Buckets", each containing contact info for nodes of a particular distance
-            // Contact, each containing ID, IP and PORT of a node
+    private final int kSize;
 
-    // FileHashTable, mapping file ids to file locations
-        // Files are stored on nodes with ids "close" to their keys via XOR
+    private RoutingTable routingTable;
 
-    private final FileHashTable fileHashTable;
+    // Files are stored on nodes with ids "close" to their keys via XOR
+    private FileHashTable fileHashTable;
 
     Node() {
         this.id = Identifier.generateId();
+        this.kSize = 20; // TODO
         this.fileHashTable = new FileHashTable(this.id);
+        this.routingTable = new RoutingTable(this.kSize);
     }
 
-    Node(String id, FileHashTable fileHashTable) {
+    Node(String id, int KSize, FileHashTable fileHashTable, RoutingTable routingTable) {
         this.id = id;
+        this.kSize = KSize;
         this.fileHashTable = fileHashTable;
+        this.routingTable = routingTable;
     }
 
     String getId() {
