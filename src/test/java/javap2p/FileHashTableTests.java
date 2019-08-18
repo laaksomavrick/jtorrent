@@ -11,7 +11,7 @@ class FileHashTableTests {
     @Test
     @DisplayName("A FileHashTable can set and get a key-value pair")
     void testNodeIdExists() {
-        var fileHashTable = new FileHashTable(Node.generateId());
+        var fileHashTable = new FileHashTable(Identifier.generateId());
 
         fileHashTable.set("foo", "value");
 
