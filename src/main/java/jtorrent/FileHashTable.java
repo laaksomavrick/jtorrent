@@ -1,4 +1,4 @@
-package javap2p;
+package jtorrent;
 
 import java.util.Hashtable;
 import java.util.Optional;

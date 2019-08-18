@@ -1,4 +1,4 @@
-package javap2p;
+package jtorrent;
 
 // Each node has a unique id
 // "We provide a lookup algorithm (b-tree) that locates successively "closer" nodes to any desired id

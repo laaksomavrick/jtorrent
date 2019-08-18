@@ -1,4 +1,4 @@
-package javap2p;
+package jtorrent;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

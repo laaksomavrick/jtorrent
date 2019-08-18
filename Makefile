@@ -1,5 +1,5 @@
 run:
-	@java -classpath target/classes javap2p.Main
+	@java -classpath target/classes jtorrent.Main
 
 test:
 	@mvn test

@@ -1,4 +1,4 @@
-package javap2p;
+package jtorrent;
 
 import java.security.MessageDigest;
 import java.util.UUID;

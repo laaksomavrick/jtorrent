@@ -1,4 +1,4 @@
-package javap2p;
+package jtorrent;
 
 public class Main {
 

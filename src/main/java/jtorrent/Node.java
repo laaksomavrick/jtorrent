@@ -1,4 +1,4 @@
-package javap2p;
+package jtorrent;
 
 /**
  * For the moment, this is the primary object of this package.
