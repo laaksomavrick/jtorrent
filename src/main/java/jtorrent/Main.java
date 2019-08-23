@@ -1,10 +1,18 @@
 package jtorrent;
 
+import java.util.Optional;
+
 public class Main {
 
     public static void main(String[] args) {
-        Node node = new Node();
-        String id = node.getId();
-        System.out.println(id);
+
+        var client = new InMemoryNetworkClient();
+        client.seed();
+        var first = client.getFirstNode().get();
+
+        Node node = new Node(client);
+
+        var ping = node.sendPingRpc(first.getId());
+        System.out.println(ping);
     }
 }
